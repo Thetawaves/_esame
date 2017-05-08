@@ -1,0 +1,497 @@
+@font-face { 
+    font-family: Big Noodle Titling; src: url('../fonts/big_noodle_titling.ttf'); 
+}
+
+@font-face { 
+    font-family: Big Noodle Titling; font-weight: italic; src: url('../fonts/big_noodle_titling_oblique.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Big Noodle Titling', sans-serif;
+}
+
+/** select-mode Start **/
+
+#select-mode {
+    height: 100%;
+    width: 100%;
+    background: #1BCEDF;
+    background: -webkit-linear-gradient(left top, #5B247A, #1BCEDF);
+    background: -o-linear-gradient(bottom right, #5B247A, #1BCEDF);
+    background: -moz-linear-gradient(bottom right, #5B247A, #1BCEDF);
+    background: linear-gradient(to bottom right, #5B247A, #1BCEDF);
+    border-top: 1px solid;
+    position: relative;
+    overflow: hidden;
+}
+
+#select-mode #logo {
+    text-align: center;
+    height: 80px;
+    margin-top: 10px;
+}
+
+#select-mode #logo img {
+    height: 100%;
+}
+
+#select-mode #noob {
+    width: 50%;
+    height: calc(100% - 91px);
+    position: absolute;
+    left: 0;
+    text-align: center;
+}
+
+#select-mode #noob button {
+    background-color: #FEED27;
+    border-radius: 5px;
+    border: 2px solid #D88931;
+    padding: 10px 20px;
+    font-size: 30px;
+    color: #565656;
+    margin-top: 10%;
+    box-shadow: 2px 2px 4px #000;
+    transition: all 0.3s;
+}
+
+#select-mode #divider {
+    height: 70%;
+    width: 2px;
+    position: absolute;
+    top: 20%;
+    background-color: #fff;
+    border-radius: 3px;
+    left: 50%;
+    margin-left: -1px;
+}
+
+#select-mode #babyw {
+    margin-top: 20%;
+    height: 40%;
+}
+
+#select-mode #babyw img {
+    height: 100%;
+}
+
+#select-mode h1 {
+    bottom: 0px;
+    position: absolute; 
+    width: 100%;
+}
+
+#select-mode h1 a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 100;
+    font-size: 34px;
+}
+
+#select-mode #pro {
+    width: 50%;
+    height: calc(100% - 91px);
+    position: absolute;
+    right: 0;
+    text-align: center;
+}
+
+#select-mode #pro #winston {
+    height: 80%;
+    margin-top: 5%;
+}
+
+#select-mode #pro #winston img {
+    height: 100%;
+}
+
+#select-mode button:hover {
+    box-shadow: none!important;
+}
+
+#select-mode h1:hover {
+    text-decoration: underline;
+}
+
+/** select-mode End **/
+
+/** index.html Start **/
+
+#menu {
+    position: fixed;
+    right: 0;
+    width: 50%;
+    z-index: 1000;
+}
+
+#menu ul {
+    text-align: right;
+}
+
+#menu ul li {
+    display: inline-block;
+    transform: rotate(45deg);
+    transform-origin: top left;
+    margin-left: 15px;
+    margin-right: 15px;
+    list-style: circle;
+    color: #fff;
+    border: 1px solid transparent;
+    padding: 2px 5px;
+    border-radius: 2px;
+}
+
+#menu li:hover {
+    border: 1px solid #fff;
+    background-color: #fff;
+    color: #35BCE0;
+}
+
+#welcome {
+    height: 100%;
+    width: 100%;
+    background: #6078EA;
+    background: -webkit-linear-gradient(left top, #17EAD9, #6078EA);
+    background: -o-linear-gradient(bottom right, #17EAD9, #6078EA);
+    background: -moz-linear-gradient(bottom right, #17EAD9, #6078EA);
+    background: linear-gradient(to bottom right, #17EAD9, #6078EA);
+    text-align: center;
+    overflow: hidden;
+}
+
+#welcome #logo {
+    height: 40%;
+}
+
+#welcome #logotop {
+    height: calc(70% - 50px);
+    padding-top: 50px;
+}
+
+#welcome #logotop img {
+    height: 100%;
+}
+
+#welcome #logo h2 {
+    margin-top: 30px;
+    height: calc(30% - 30px);
+}
+
+#welcome #characters {
+    height: 60%;
+}
+
+#welcome #characters img {
+    height: 100%;
+    padding-bottom: 40px;
+}
+
+#tutorial {
+    height: 100%;
+    width: 100%;
+}
+
+#roles {
+    width: 100%;
+    background-image: url(../img/back.png);
+    background-repeat: repeat;
+}
+
+#roles #role {
+    padding-top: 20px;
+    text-align: center;
+    width: 50%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+#roles #role p {
+    font-family: 'Lucida Grande', sans-serif;
+}
+
+.container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 7px;
+    margin-bottom: 0px;
+    transition: all 1.5s;
+    margin-bottom: 30px
+}
+
+.container#last {
+    margin-bottom: 0!important;
+}
+
+.container .top {
+    cursor: pointer;
+}
+
+.containerClicked {
+    background: rgb(66,230,149);
+    background: -moz-linear-gradient(-45deg, rgba(66,230,149,1) 0%, rgba(59,178,184,1) 100%);
+    background: -webkit-linear-gradient(-45deg, rgba(66,230,149,1) 0%,rgba(59,178,184,1) 100%);
+    background: linear-gradient(bottom right, rgba(66,230,149,1) 0%,rgba(59,178,184,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#42e695', endColorstr='#3bb2b8',GradientType=1 );
+}
+
+#roles .section {
+    height: 80px;
+    padding: 20px;
+    border-top: 2px solid #ddd;
+}
+
+.removeBorder {
+    border-top: none!important;
+}
+
+#roles .section .top .text {
+    width: 60%;
+    float: left;
+}
+
+#roles .section .top p {
+    font-family: 'Lucida Grande', sans-serif;
+    line-height: 20px;
+}
+
+#roles .section .top img {
+    height: 100px;
+    float: right;
+    margin-right: 50px;
+}
+
+.container .bot {
+    text-align: center;
+    height: 0;
+}
+
+.botClicked {
+    height: auto!important;
+}
+
+.container .bot .card {
+    width: 180px;
+    height: 0;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: #E5E5E5;
+    display: inline-block;
+    color: #000;
+    transition: background-color 1.5s;
+}
+
+.cardClicked {
+    height: 300px!important;
+}
+
+.container .bot .card .img {
+    height: calc(100% - 30px);
+    vertical-align: top;
+    position: relative;
+    overflow: hidden;
+}
+
+.container .bot .card:hover {
+    background-color: #333!important;
+}
+
+.container .bot .card:hover .img img {
+    width: 240px;
+    margin-left: -120px;
+}
+
+.container .bot .card#even {
+    background-color: #BDBDBD;
+}
+
+.container .bot .card .img img {
+    width: 160px;
+    margin-bottom: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -80px;
+    transition: all 3s;
+}
+
+.container .bot .card h2 {
+    display: none;
+}
+
+.nameClicked {
+    display: block!important;
+    transition-delay: 1.5s;
+}
+
+#maps-header {
+    width: 100%;
+    background: #6078EA;
+    background: -webkit-linear-gradient(left top, #6078EA, #17EAD9);
+    background: -o-linear-gradient(bottom right, #6078EA, #17EAD9);
+    background: -moz-linear-gradient(bottom right, #6078EA, #17EAD9);
+    background: linear-gradient(to bottom right, #6078EA, #17EAD9);
+    text-align: center;
+    border-top: 1px solid #6078EA
+}
+
+#maps p {
+    font-family: 'Lucida Grande';
+    padding: 20px 0;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.slicker {
+    width: 100%;
+}
+
+.slicker .page {
+    height: 90vh;
+    position: relative;
+}
+
+.map {
+    display: inline-block;
+    height: 100%;
+    width: 33.3333333%;
+    text-align: center;
+    position: absolute;
+    overflow: hidden;
+}
+
+.four-row .map {
+    width: 25%;
+}
+
+.four-row .map:nth-child(2) {
+    left: 25%;
+}
+
+.four-row .map:nth-child(3) {
+    left: 50%;
+}
+
+.four-row .map:nth-child(4) {
+    left: 75%;
+}
+
+.map:nth-child(2) {
+    left: 33.3333333%;
+}
+
+.map:nth-child(3) {
+    left: 66.6666666%;
+}
+
+.map h1 {
+    position: absolute;
+    width: 100%;
+    top: 25%;
+    color: #fff;
+}
+
+.map img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all 5s;
+}
+
+.map img:hover {
+    height: 150%;
+    width: 150%;
+}
+
+.slicker .page .descr {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7)
+}
+
+.slicker .page .descr h1, .slicker .page .descr p {
+    width: 100vw;
+    text-align: center;
+    color: #fff;
+}
+
+footer {
+    background-image: url(../img/Overwatch-Logo-1-670x350.png);
+    background-size: cover;
+    position: relative;
+    height: 300px;
+}
+
+footer #blizz-logo {
+    top: 175px;
+    left: 25px;
+    height: 100px;
+    position: absolute;
+}
+
+footer #blizz-logo-wrap {
+    height: 75px;
+}
+
+footer #blizz-logo-wrap img {
+    height: 100%;
+}
+
+footer #blizz-logo p {
+    display: block;
+    color: #fff;
+    font-family: 'Lucida Grande';
+    font-size: 12px;
+}
+
+#footer-menu {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 150px;
+    font-family: 'Lucida Grande';
+    text-transform: uppercase;
+}
+
+#footer-menu ul {
+    
+}
+
+#footer-menu ul li {
+    display: inline-block;
+    border-right: 2px solid #fff;
+}
+
+#footer-menu ul li:last-child {
+    border-right: none;
+}
+
+#footer-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 20px;
+}
+
+#footer-menu ul li a:hover {
+    text-decoration: underline;
+}
+
+#pegi {
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+}
+
+/** index.html End **/
+
+
