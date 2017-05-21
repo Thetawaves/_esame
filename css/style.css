@@ -17,6 +17,50 @@ html, body {
     font-family: 'Big Noodle Titling', sans-serif;
 }
 
+/** loading page **/
+
+#loading {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(315deg, #1bcedf, #27afcc, #3a7bae, #4a5194, #5b247a);
+    background-size: 500% 500%;
+    -webkit-animation: loading-gradient 10s ease infinite;
+    -moz-animation: loading-gradient 10s ease infinite;
+    -o-animation: loading-gradient 10s ease infinite;
+    animation: loading-gradient 10s ease infinite;
+    position: fixed;
+    z-index: 1000;
+}
+
+@-webkit-keyframes loading-gradient {
+    0%{background-position:0% 5%}
+    50%{background-position:100% 96%}
+    100%{background-position:0% 5%}
+}
+@-moz-keyframes loading-gradient {
+    0%{background-position:0% 5%}
+    50%{background-position:100% 96%}
+    100%{background-position:0% 5%}
+}
+@-o-keyframes loading-gradient {
+    0%{background-position:0% 5%}
+    50%{background-position:100% 96%}
+    100%{background-position:0% 5%}
+}
+@keyframes loading-gradient { 
+    0%{background-position:0% 5%}
+    50%{background-position:100% 96%}
+    100%{background-position:0% 5%}
+}
+
+#loading #logo-loader {
+    height: 200px;
+}
+
+#loading #logo-loader img {
+    height: 100%;
+}
+
 /** select-mode Start **/
 
 #select-mode {
@@ -128,7 +172,7 @@ html, body {
     position: fixed;
     right: 0;
     width: 50%;
-    z-index: 1000;
+    z-index: 100;
 }
 
 #menu ul {
@@ -141,14 +185,18 @@ html, body {
     transform-origin: top left;
     margin-left: 15px;
     margin-right: 15px;
-    list-style: circle;
-    color: #fff;
-    border: 1px solid transparent;
-    padding: 2px 5px;
-    border-radius: 2px;
+    font-size: 100%;
 }
 
-#menu li:hover {
+#menu ul li a {
+    color: #000;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    padding: 2px 5px;
+}
+
+#menu ul li a:hover {
     border: 1px solid #fff;
     background-color: #fff;
     color: #35BCE0;
@@ -218,6 +266,10 @@ html, body {
     font-family: 'Lucida Grande', sans-serif;
 }
 
+#roles .role-container {
+    position: relative;
+}
+
 .container {
     width: 90%;
     margin-left: auto;
@@ -225,11 +277,13 @@ html, body {
     border-radius: 7px;
     margin-bottom: 0px;
     transition: all 1.5s;
-    margin-bottom: 30px
+    margin-bottom: 30px;
+    position: relative;
 }
 
 .container#last {
-    margin-bottom: 0!important;
+    margin-bottom: 0;
+    padding-bottom: 20px;
 }
 
 .container .top {
@@ -248,6 +302,7 @@ html, body {
     height: 80px;
     padding: 20px;
     border-top: 2px solid #ddd;
+    position: relative;
 }
 
 .removeBorder {
@@ -270,6 +325,49 @@ html, body {
     margin-right: 50px;
 }
 
+#roles #close-menu {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    z-index: 1000;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 2%;
+    display: none;
+}
+
+#roles #left, #roles #right {
+    position: absolute;
+    height: 4px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #000;
+    z-index: 1;
+    top: 14px;
+    right: 2px;
+}
+
+#roles #close-menu:hover {
+    animation: rotate-close-menu 1.5s;
+}
+
+@keyframes rotate-close-menu {
+    0% {}
+    100% { transform: rotate(720deg); }
+}
+
+.closeMenu {
+    display: block!important;
+}
+
+#roles #left {
+    transform: rotate(45deg);
+}
+
+#roles #right {
+    transform: rotate(-45deg);
+}
+
 .container .bot {
     text-align: center;
     height: 0;
@@ -284,7 +382,7 @@ html, body {
     height: 0;
     margin-top: 40px;
     margin-bottom: 40px;
-    background-color: #E5E5E5;
+    background-color: rgba(229, 229, 229, 0.6);
     display: inline-block;
     color: #000;
     transition: background-color 1.5s;
@@ -297,8 +395,8 @@ html, body {
 .container .bot .card .img {
     height: calc(100% - 30px);
     vertical-align: top;
-    position: relative;
     overflow: hidden;
+    position: relative;
 }
 
 .container .bot .card:hover {
@@ -306,26 +404,48 @@ html, body {
 }
 
 .container .bot .card:hover .img img {
-    width: 240px;
-    margin-left: -120px;
+    height: 240px;
+    padding-top: 10px;
+}
+
+.container .bot .card:hover h2 {
+    color: #fff;
+}
+
+.container .bot .card:hover .img #shadow {
+    animation: fadeOut;
+    -webkit-animation-duration: 3s;animation-duration: 3s;
+    -webkit-animation-fill-mode: both;animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
 }
 
 .container .bot .card#even {
-    background-color: #BDBDBD;
+    background-color: rgba(189, 189, 189, 0.6);
 }
 
 .container .bot .card .img img {
-    width: 160px;
-    margin-bottom: 10px;
+    height: 200px;
+    transition: all 1s;
+    padding-top: 50px;
     position: absolute;
-    bottom: 0;
     left: 50%;
-    margin-left: -80px;
-    transition: all 3s;
+    top: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
 }
 
 .container .bot .card h2 {
     display: none;
+    color: #000;
+    transition: color 1.5s;
 }
 
 .nameClicked {
@@ -341,7 +461,7 @@ html, body {
     background: -moz-linear-gradient(bottom right, #6078EA, #17EAD9);
     background: linear-gradient(to bottom right, #6078EA, #17EAD9);
     text-align: center;
-    border-top: 1px solid #6078EA
+    border-top: 1px solid #6078EA;
 }
 
 #maps p {
@@ -399,6 +519,7 @@ html, body {
     width: 100%;
     top: 25%;
     color: #fff;
+    z-index: 1;
 }
 
 .map img {
@@ -406,6 +527,10 @@ html, body {
     width: 100%;
     object-fit: cover;
     transition: all 5s;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
 }
 
 .map img:hover {
@@ -426,10 +551,23 @@ html, body {
 }
 
 footer {
-    background-image: url(../img/Overwatch-Logo-1-670x350.png);
-    background-size: cover;
+    background: #7117EA;
+    background: -webkit-linear-gradient(left top, #EA6060, #7117EA);
+    background: -o-linear-gradient(bottom right, #EA6060, #7117EA);
+    background: -moz-linear-gradient(bottom right, #EA6060, #7117EA);
+    background: linear-gradient(to bottom right, #EA6060, #7117EA);
     position: relative;
     height: 300px;
+}
+
+footer #footer-logo {
+    height: 300px;
+    width: 100%;
+    background-image: url(../img/logo_footer.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.5;
 }
 
 footer #blizz-logo {
@@ -494,4 +632,76 @@ footer #blizz-logo p {
 
 /** index.html End **/
 
+/** Character Profile Start **/
+
+#character-profile {
+    border-top: 1px solid #000;
+    height: 100%;
+    width: 100%;
+    background: url(../img/character-info-hanzo.png) no-repeat;
+    background-size: cover;
+}
+
+#character-profile #abilities {
+    top: 3em;
+    left: 2em;
+    position: absolute;
+}
+
+#character-profile #abilities li, #character-profile #profile li {
+    color: #fff;
+    list-style: none;
+}
+
+#character-profile #abilities li:nth-child(odd), #character-profile #profile li:nth-child(odd) {
+    font-size: 120%;;
+}
+
+#character-profile #abilities li:nth-child(even), #character-profile #profile li:nth-child(even) {
+    font-family: 'Lucida Grande';
+    font-size: 80%;
+    margin-bottom: 3em;
+}
+
+#character-profile #profile {
+    position: absolute;
+    top: 3em;
+    right: 2em;
+}
+
+#character-bio {
+    height: 100%;
+    width: 100%;
+    background: #FCE38A;
+    background: -webkit-linear-gradient(left top, #FCE38A, #F38181);
+    background: -o-linear-gradient(bottom right, #FCE38A, #F38181);
+    background: -moz-linear-gradient(bottom right, #FCE38A, #F38181);
+    background: linear-gradient(to bottom right, #FCE38A, #F38181);
+}
+
+#character-bio #biography-img {
+    height: 100%;
+    width: 50%;
+    float: left;
+}
+
+#character-bio #biography-img img {
+    height: calc(100% - 2em);
+    width: 100%;
+    object-fit: contain;
+    margin-top: 2em;
+}
+
+#character-bio #biography-text {
+    height: calc(100% - 2em);
+    width: calc(50% - 2em);
+    float: right;
+    padding: 1em;
+}
+
+#character-bio #biography-text p {
+    font-family: 'Lucida Grande';
+    font-size: 85%;
+    padding: 1.5em 3em;
+}
 
