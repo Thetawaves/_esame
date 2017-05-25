@@ -55,13 +55,20 @@ html, body {
 
 #loading #logo-loader {
     height: 200px;
+    width: 200px;
+    background-color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: calc(25% - 100px);
+    border-radius: 50%;
+    overflow: hidden
 }
 
 #loading #logo-loader img {
-    height: 100%;
+    height: 200px;
 }
 
-/** select-mode Start **/
+/** index.html Start **/
 
 #select-mode {
     height: 100%;
@@ -164,14 +171,13 @@ html, body {
     text-decoration: underline;
 }
 
-/** select-mode End **/
+/** index.html End **/
 
-/** index.html Start **/
+/** new-player.html Start **/
 
 #menu {
     position: fixed;
     right: 0;
-    width: 50%;
     z-index: 100;
 }
 
@@ -288,6 +294,7 @@ html, body {
 
 .container .top {
     cursor: pointer;
+    height: 100px;
 }
 
 .containerClicked {
@@ -299,10 +306,19 @@ html, body {
 }
 
 #roles .section {
-    height: 80px;
+    
     padding: 20px;
     border-top: 2px solid #ddd;
     position: relative;
+    transition: background-color 0.5s;
+}
+
+#roles .container:hover {
+    background: rgb(66,230,149);
+    background: -moz-linear-gradient(-45deg, rgba(66,230,149,1) 0%, rgba(59,178,184,1) 100%);
+    background: -webkit-linear-gradient(-45deg, rgba(66,230,149,1) 0%,rgba(59,178,184,1) 100%);
+    background: linear-gradient(bottom right, rgba(66,230,149,1) 0%,rgba(59,178,184,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#42e695', endColorstr='#3bb2b8',GradientType=1 );
 }
 
 .removeBorder {
@@ -371,6 +387,7 @@ html, body {
 .container .bot {
     text-align: center;
     height: 0;
+    width: 100%;
 }
 
 .botClicked {
@@ -380,12 +397,12 @@ html, body {
 .container .bot .card {
     width: 180px;
     height: 0;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     background-color: rgba(229, 229, 229, 0.6);
     display: inline-block;
     color: #000;
-    transition: background-color 1.5s;
+    transition: background-color 0.2s;
 }
 
 .cardClicked {
@@ -414,7 +431,7 @@ html, body {
 
 .container .bot .card:hover .img #shadow {
     animation: fadeOut;
-    -webkit-animation-duration: 3s;animation-duration: 3s;
+    -webkit-animation-duration: 0.5s;animation-duration: 0.5s;
     -webkit-animation-fill-mode: both;animation-fill-mode: both;
 }
 
@@ -434,7 +451,7 @@ html, body {
 
 .container .bot .card .img img {
     height: 200px;
-    transition: all 1s;
+    transition: all 0.5s;
     padding-top: 50px;
     position: absolute;
     left: 50%;
@@ -520,6 +537,12 @@ html, body {
     top: 25%;
     color: #fff;
     z-index: 1;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.map h1:hover {
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .map img {
@@ -533,19 +556,20 @@ html, body {
     -webkit-transform: translateY(-50%) translateX(-50%);
 }
 
-.map img:hover {
+.map:hover img {
     height: 150%;
     width: 150%;
 }
 
 .slicker .page .descr {
+    width: 100%;
     position: absolute;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.7)
 }
 
 .slicker .page .descr h1, .slicker .page .descr p {
-    width: 100vw;
+    width: 100%;
     text-align: center;
     color: #fff;
 }
@@ -571,7 +595,7 @@ footer #footer-logo {
 }
 
 footer #blizz-logo {
-    top: 175px;
+    bottom: 25px;
     left: 25px;
     height: 100px;
     position: absolute;
@@ -630,9 +654,52 @@ footer #blizz-logo p {
     bottom: 25px;
 }
 
-/** index.html End **/
+/** new-player.html End **/
 
 /** Character Profile Start **/
+
+.arrow {
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #666;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+    transition: all 0.5s;
+    transform: rotate(0deg);
+    z-index: 10;
+}
+
+.rotate {
+    transform: rotate(90deg);
+    transition: all 0.5s;
+}
+
+.arrow #one, .arrow #two {
+    height: 6px;
+    width: 25px;
+    position: absolute;
+    background-color: #ffa500;
+    transform: rotate(-35deg);
+    top: 17px;
+    left: 10px;
+    border-radius: 5px;
+}   
+
+.arrow #two {
+    transform: rotate(35deg);
+    top: 29px;
+}
+
+#arrow-back {
+    display: block;
+}
+
+#arrow-top {
+    display: none;
+}
 
 #character-profile {
     border-top: 1px solid #000;
@@ -705,3 +772,30 @@ footer #blizz-logo p {
     padding: 1.5em 3em;
 }
 
+@media only screen and (max-width : 960px) {
+    footer {
+        height: 200px;
+    }
+    
+    #footer-menu {
+        top: 50px;
+    }
+    
+    footer #footer-logo {
+        display: none;
+    }
+    
+    footer #blizz-logo-wrap {
+        height: 50px;
+    }
+    
+    footer #blizz-logo p {
+        font-size: 8px;
+    }
+    
+    footer #blizz-logo {
+        bottom: 5px;
+        height: 75px;
+    }
+
+}
